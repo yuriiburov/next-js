@@ -1,6 +1,8 @@
+import Heading from "../components/Heading";
+
 const Error = () => (
     <>
-      <h1>404</h1>
+      <Heading text='404'/>
       <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, ea!</h2>
     </>
   );
