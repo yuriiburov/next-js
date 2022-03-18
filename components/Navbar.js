@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from 'next/link';
 import styles from '../styles/Navbar.module.scss';
 import { useRouter } from "next/router";
@@ -12,7 +13,9 @@ const Navbar = () => {
   const { pathname } = useRouter()
   return (
     <nav className={styles.nav}>
-      <div className={styles.logo}>Lesson 5</div>
+      <div className={styles.logo}>
+        <Image src="/logo.png" width={60} height={60} alt="logo"/>
+      </div>
       <div className={styles.links}>
         {
           navigation.map(({ id, title, path }) =>
