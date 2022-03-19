@@ -10,7 +10,7 @@ const contactInfo = ({contact}) => {
 
   return (
     <>
-      <Heading tag={h3} text={name}/>
+      <Heading tag={'h3'} text={name}/>
       <div>
         <strong>Email: </strong>
         {email}

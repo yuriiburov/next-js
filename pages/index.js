@@ -1,17 +1,28 @@
 import Heading from "../components/Heading";
 import styles from '../styles/Home.module.scss';
-import  Head  from "next/head";
+import Head from "next/head";
+import Socials from "../components/Socials";
 
+export const getStaticProps = async () => {
+  const response = await fetch(`${process.env.API_HOST}/socials/`);
+  const data = await response.json();
 
-const Home = () => (
-  <>
+  if (!data) {
+    return { notFound: true, }
+  }
+
+  return { props: { socials: data }, }
+};
+
+const Home = ({ socials }) => (
+  <div className={styles.wrapper}>
     <Head>
-      <title>Index</title>
+      <title>Home</title>
     </Head>
-    <div className={styles.wrapper}>
-      <Heading text='Hello world!'/>
-    </div>
-  </>
+    <Heading text='Next.js Application'/>
+    <Socials socials={socials}/>
+  </div>
+
 
 )
 

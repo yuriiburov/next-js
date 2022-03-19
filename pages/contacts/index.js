@@ -7,14 +7,13 @@ export const getStaticProps = async () => {
   const data = await response.json();
 
   if (!data) {
-    return { notFound: true }
+    return { notFound: true, }
   }
 
-  return { props: { contacts: data } }
-}
+  return { props: { contacts: data }, }
+};
 
 const Contacts = ({ contacts }) => {
-
   return (
     <>
       <Head>
